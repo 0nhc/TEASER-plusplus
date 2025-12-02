@@ -1,3 +1,19 @@
+Installation steps on my own machine
+```sh
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+mkdir build
+cd build
+cmake -DBUILD_PYTHON_BINDINGS=ON ..
+make teaserpp_python
+cd ..
+pip wheel . -w dist
+pip install dist/teaserpp_python-*
+cd examples/teaser_python_ply
+python teaser_python_ply.py
+```
+
 # TEASER++: fast & certifiable 3D registration 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Documentation Status](https://readthedocs.org/projects/teaser/badge/?version=latest)](https://teaser.readthedocs.io/en/latest/?badge=latest)
